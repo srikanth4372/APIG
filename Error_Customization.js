@@ -1,3 +1,4 @@
+try{
 //Reading past invoke response body
 var serverStatusResponse = apim.getvariable('Verified.body');
 var status = serverStatusResponse.Result.STATUS;
@@ -25,3 +26,7 @@ if (status === 'ACTIVE' || it.includes('public')) {
 }
 
 
+ }
+catch(err) {
+    apim.error('MyError', 500, 'Internal Error', 'One of the backend service is not as expected.');
+}
