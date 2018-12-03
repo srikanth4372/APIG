@@ -52,3 +52,11 @@
 from_IDcont = PartnerB-KEY2-INT
 to_IDcont = PartnerB-KEY2-EXT
 destinationcont = PartnerB-KEY2-DESTINATION 
+
+*********************
+
+var response = apim.getvariable('message.body');
+
+var objType = response.item(0);
+
+console.error(objType.getElementsByTagName("AFC_STATUS").item(0).textContent);
